@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:theme="@android:style/Theme.Light.NoTitleBar">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal"
+            android:background="@color/main_color">
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="10"
+                android:orientation="vertical">
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/home_btn"
+                    android:id="@+id/home_btn" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:layout_gravity="center_vertical"
+                android:textSize="70px"
+                android:text=" DGUBOOK"
+                android:id="@+id/textView" />
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="10"
+                android:paddingLeft="20dp"
+                android:orientation="vertical">
+                <Button
+                    android:layout_width="65dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/notifications_btn"
+                    android:id="@+id/noti_btn" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <!--메인부분-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+
+
+        </LinearLayout>
+        <!--/////////////////////////////-->
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:background="@color/main_color"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="20"
+            android:background="@android:color/transparent"
+            android:text="상세검색"
+            android:id="@+id/button1" />
+        <android.widget.Space
+            android:layout_width="5px"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"/>
+        <Button
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="20"
+            android:background="@android:color/transparent"
+            android:text="교재등록"
+            android:id="@+id/button2" />
+        <android.widget.Space
+            android:layout_width="5px"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"/>
+        <Button
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="20"
+            android:background="@android:color/transparent"
+            android:text="교재예약"
+            android:id="@+id/button3" />
+        <android.widget.Space
+            android:layout_width="5px"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"/>
+        <Button
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="20"
+            android:background="@android:color/transparent"
+            android:text="메세지"
+            android:id="@+id/button4" />
+        <android.widget.Space
+            android:layout_width="5px"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"/>
+        <Button
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="20"
+            android:background="@android:color/transparent"
+            android:text="나의정보"
+            android:id="@+id/button5" />
+    </LinearLayout>
+
+
+</RelativeLayout>
