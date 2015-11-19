@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dgubook</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="splash1">DGUBOOK</string>
+    <string name="splash2">동국대학교 학생들을 위한 중고 교재 마켓</string>
+    <string name="findpass">비밀번호를 잊으셨습니까?<u>underline</u></string>
+
+</resources>
