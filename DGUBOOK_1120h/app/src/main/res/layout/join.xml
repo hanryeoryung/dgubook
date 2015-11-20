@@ -1,0 +1,174 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:andorid="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:theme="@android:style/Theme.Light.NoTitleBar"
+    android:orientation="vertical"
+    android:background="#ffffff">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="65dp"
+            android:orientation="vertical"
+            android:background="@color/main_color"
+            android:weightSum="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:textSize="70px"
+                android:text="DGUBOOK"
+                android:id="@+id/textView" />
+        </LinearLayout>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:textSize="30dp"
+            android:textColor="@color/main_color"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp" />
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="10dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*DGUBOOK은 동국대학생만 가입이 가능합니다.              동국대 이메일을 기입해주세요*"
+            android:textSize="15dp"
+            android:textColor="@color/main_color"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp" />
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="5dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="250dp"
+                    android:layout_height="45dp"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/underbar"
+                    android:ems="10"
+                    android:singleLine="true"
+                    android:hint="이메일주소"
+                    android:id="@+id/join_email_id"
+                    android:textSize="30px" />
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="fill_parent">
+                </Space>
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:text="중복확인"
+                    android:textColor="#ffffff"
+                    android:background="@color/main_color"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/email_duplication"/>
+            </LinearLayout>
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="3dp">
+            </Space>
+            <EditText
+                android:id="@+id/join_user_name"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:background="@drawable/underbar"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="이름"
+                android:paddingBottom="5dp"
+                android:textSize="30px" />
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="3dp">
+            </Space>
+            <EditText
+                android:id="@+id/join_user_student_id"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:background="@drawable/underbar"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="학번"
+                android:paddingBottom="5dp"
+                android:textSize="30px" />
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="3dp">
+            </Space>
+            <EditText
+                android:id="@+id/join_password_1"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:inputType="textPassword"
+                android:background="@drawable/underbar"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="비밀번호 ( 6 - 12자 )"
+                android:textSize="30px" />
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="3dp">
+            </Space>
+            <EditText
+                android:id="@+id/join_password_2"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:inputType="textPassword"
+                android:background="@drawable/underbar"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="비밀번호 확인 ( 6 - 12자 )"
+                android:textSize="30px" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="15dp">
+        </Space>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:text="가입하기"
+            android:textColor="#ffffff"
+            android:background="@color/main_color"
+            android:id="@+id/join_joinBtn" />
+    </LinearLayout>
+
+</LinearLayout>
+
