@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:theme="@android:style/Theme.Light.NoTitleBar">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:background="@color/main_color">
+        <Space
+            android:layout_width="135dp"
+            android:layout_height="70dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text=" DGUBOOK"
+            android:id="@+id/textView"
+            android:layout_gravity="center"
+            android:textStyle="bold" />
+        <Space
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:background="@drawable/home_btn"
+            android:id="@+id/messenger_home_btn"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="70"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/main_color">
+
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="상세검색"
+            android:id="@+id/messenger_button1" />
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="교재등록"
+            android:id="@+id/messenger_button2" />
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="교재예약"
+            android:id="@+id/messenger_button3" />
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:textColor="@color/main_color"
+            android:background="#ffffff"
+            android:text="메세지"
+            android:id="@+id/messenger_button4" />
+        <Button
+            android:layout_width="74dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="나의정보"
+            android:id="@+id/messenger_button5" />
+    </LinearLayout>
+
+
+</LinearLayout>
