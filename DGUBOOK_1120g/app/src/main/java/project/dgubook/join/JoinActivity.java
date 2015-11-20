@@ -65,26 +65,30 @@ public class JoinActivity extends AppCompatActivity {
                             uName = name.getText().toString();
                             uStudent = student_id.getText().toString();
                             uPassword = password1.getText().toString();
-                            AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
+//                            AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
                             if (toConfirmCodeSend() == 0) { //인증 코드 메일 발송
 
                             } else {
-                                builder.setMessage("오류가 있어 회원가입에 실패했습니다.(code)").show();
+//                                builder.setMessage("오류가 있어 회원가입에 실패했습니다.(code)").show();
+                                Toast.makeText(JoinActivity.this, "오류가 있어 회원가입에 실패했습니다.(code)", Toast.LENGTH_SHORT).show();
                             }
                         }
                         else {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
-                            builder.setMessage("비밀번호가 일치하지 않습니다").show();
+//                            AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
+//                            builder.setMessage("비밀번호가 일치하지 않습니다").show();
+                            Toast.makeText(JoinActivity.this, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
-                        builder.setMessage("동국대학교 웹메일을 사용해주세요!").show();
+//                        AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
+//                        builder.setMessage("동국대학교 웹메일을 사용해주세요!").show();
+                        Toast.makeText(JoinActivity.this, "동국대학교 웹메일을 사용해주세요!", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else{
-                    AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
-                    builder.setMessage("빈칸없이 기입해 주세요!").show();
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(JoinActivity.this);
+//                    builder.setMessage("빈칸없이 기입해 주세요!").show();
+                    Toast.makeText(JoinActivity.this, "빈칸없이 기입해 주세요!", Toast.LENGTH_SHORT).show();
                 }
 
             }

@@ -34,9 +34,7 @@ public class MainLoginActivity extends AppCompatActivity {
     private static final int MSG_PASSFALSE = -4;
     EditText email, pass;
     String uEmail, uPassword;
-
-    Thread thread;
-    Message text;
+    AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +63,7 @@ public class MainLoginActivity extends AppCompatActivity {
         if(auto_login_cb.isChecked()){
             email.setText(a_user_id);
             pass.setText(a_user_pw);
+            loginVerify();
         }
         Button loginBtn ,joinBtn;
         loginBtn = (Button)findViewById(R.id.loginBtn);
@@ -73,27 +72,6 @@ public class MainLoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //로그인 유효성 검사 추가
                 loginVerify();
-//                if(loginVerify() == 0){
-//                    AlertDialog dialog = loginDialogBox(0); //로그인되었습니다 alert
-//                    dialog.show();
-//                }else if(loginVerify() == -1){//연결실패
-//                    AlertDialog dialog = loginDialogBox(-1); //로그인되었습니다 alert
-//                    dialog.show();
-//                }
-//                else if(loginVerify() == -2){//디비에러
-//                    AlertDialog dialog = loginDialogBox(-1); //로그인되었습니다 alert
-//                    dialog.show();
-//                }
-//                else if(loginVerify() == -3){
-//                    //아이디 틀린메세지 확인
-//                    AlertDialog dialog = loginDialogBox(-1); //로그인되었습니다 alert
-//                    dialog.show();
-//                }
-//                else if(loginVerify() == -4){
-//                    //비번 틀린메세지 확인
-//                    AlertDialog dialog = loginDialogBox(-1); //로그인되었습니다 alert
-//                    dialog.show();
-//                }
             }
         });
         joinBtn = (Button)findViewById(R.id.joinBtn);
@@ -125,93 +103,94 @@ public class MainLoginActivity extends AppCompatActivity {
     private int loginVerify() {
         uEmail = email.getText().toString();
         uPassword = pass.getText().toString();
-                String b_tmp = "";
-                try {
-                    URL mUrl = new URL("http://210.94.222.136/dgubook_loginverify.php?id='" + URLEncoder.encode(uEmail, "UTF-8") +
-                            "' &pass=" + URLEncoder.encode(uPassword, "UTF-8"));
+        String b_tmp = "";
+        try {
+            URL mUrl = new URL("http://210.94.222.136/dgubook_loginverify.php?id='" + URLEncoder.encode(uEmail, "UTF-8") +
+                    "'&pass=" + uPassword);//URLEncoder.encode(uPassword, "UTF-8"));
+//                    URL mUrl= new URL("http://210.94.222.136/dgubook_loginverify.php?id='wbwlwb@gmail.com'&pass=ccv");
 //                    Toast.makeText(MainLoginActivity.this, URLEncoder.encode(uPassword, "UTF-8"), Toast.LENGTH_SHORT).show();
-                    HttpURLConnection conn = (HttpURLConnection) mUrl.openConnection();
-                    // conn.connect();
-                    if (conn != null) {
-                        conn.setConnectTimeout(10000);
-                        conn.setUseCaches(false);
-                        // 연결되었음 코드가 리턴되면.
-                        if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "EUC-KR"));
-                            for (; ; ) {
-                                // 웹상에 보여지는 텍스트를 라인단위로 읽어 저장.
-                                String line = br.readLine();
-                                if (line == null) break;
-                                b_tmp += line;
-                            }
-                            br.close();
-                            // join_back_btn.setText(b_tmp);
-
-                            Toast.makeText(MainLoginActivity.this, b_tmp, Toast.LENGTH_SHORT).show();
-                            if (b_tmp.equals("No Such User Found")) {
-//                    return -3;
-                                handler.sendMessage(handler.obtainMessage(MSG_IDFALSE));
-                                return 0;
-                            }
-                            if (b_tmp.equals("false pass")) {
-//                    return -4;
-                                handler.sendMessage(handler.obtainMessage(MSG_PASSFALSE));
-                                return 0;
-                            }
-                        }
-                    } else {
-                       // return -1;
-
-                        handler.sendMessage(handler.obtainMessage(MSG_INTERNETERROR));
-                        return 0;
+            HttpURLConnection conn = (HttpURLConnection) mUrl.openConnection();
+            // conn.connect();
+            if (conn != null) {
+                conn.setConnectTimeout(10000);
+                conn.setUseCaches(false);
+                // 연결되었음 코드가 리턴되면.
+                if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                    BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "EUC-KR"));
+                    for (; ; ) {
+                        // 웹상에 보여지는 텍스트를 라인단위로 읽어 저장.
+                        String line = br.readLine();
+                        if (line == null) break;
+                        b_tmp += line;
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
-//                    return -2;
-                    handler.sendMessage(handler.obtainMessage(MSG_DBERROR));
-                    return 0;
+                    br.close();
+                    // join_back_btn.setText(b_tmp);
+                    Toast.makeText(MainLoginActivity.this, b_tmp, Toast.LENGTH_SHORT).show();
                 }
+            } else {
+                // return -1;
 
-//                return 0;
-                handler.sendMessage(handler.obtainMessage(MSG_LOGINOK));
+                handler.sendMessage(handler.obtainMessage(MSG_INTERNETERROR));
+                return 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+//                    return -2;
+            handler.sendMessage(handler.obtainMessage(MSG_DBERROR));
+            return 0;
+        }
+        if (b_tmp.equals("No Such User Found")) {
+//                    return -3;
+            handler.sendMessage(handler.obtainMessage(MSG_IDFALSE));
+            return 0;
+        }
+        if (b_tmp.equals("false pass")) {
+//                    return -4;
+            handler.sendMessage(handler.obtainMessage(MSG_PASSFALSE));
+            return 0;
+        }//                return 0;
+        handler.sendMessage(handler.obtainMessage(MSG_LOGINOK));
         return 0;
     }
     public Handler handler=new Handler(){
         public void handleMessage(Message msg){
-            AlertDialog dialog;
             switch (msg.what){
                 case MSG_LOGINOK:
-                   dialog = loginDialogBox(0); //로그인되었습니다 alert
-                   dialog.show();
+                    dialog = loginDialogBox(0);
+                    dialog.show();
+                    break;
                 case MSG_INTERNETERROR:
-                    dialog = loginDialogBox(-1); //로그인되었습니다 alert
+                    dialog = loginDialogBox(-1);
                     dialog.show();
+                    break;
                 case MSG_DBERROR:
-                    dialog = loginDialogBox(-2); //로그인되었습니다 alert
+                    dialog = loginDialogBox(-2);
                     dialog.show();
+                    break;
                 case MSG_IDFALSE:
-                //아이디 틀린메세지 확인
-                    dialog = loginDialogBox(-3); //로그인되었습니다 alert
+                    //아이디 틀린메세지 확인
+                    dialog = loginDialogBox(-3);
                     dialog.show();
+                    break;
                 case MSG_PASSFALSE:
-                //비번 틀린메세지 확인
-                    dialog = loginDialogBox(-4); //로그인되었습니다 alert
+                    //비번 틀린메세지 확인
+                    dialog = loginDialogBox(-4);
                     dialog.show();
+                    break;
             }
         }
     };
 
     private AlertDialog loginDialogBox(int flag) { //alert
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
         builder.setTitle("알림");
-
         if(flag == 0){
             builder.setMessage("로그인 되었습니다!");
             builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     toHome();
+                    dialog.cancel();
                 }
             });
         }else if(flag == -1){ //연결실패
@@ -220,6 +199,7 @@ public class MainLoginActivity extends AppCompatActivity {
             builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
+                    dialog.cancel();
                 }
             });
         }else if(flag == -2){ //디비에러
@@ -228,6 +208,7 @@ public class MainLoginActivity extends AppCompatActivity {
             builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
+                    dialog.cancel();
                 }
             });
         }else if(flag == -3){ //아이디 틀렸을때
@@ -236,6 +217,7 @@ public class MainLoginActivity extends AppCompatActivity {
             builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
+                    dialog.cancel();
                 }
             });
         }else if(flag == -4){ //비번 틀렸을때
@@ -244,6 +226,7 @@ public class MainLoginActivity extends AppCompatActivity {
             builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
+                    dialog.cancel();
                 }
             });
         }
@@ -253,7 +236,6 @@ public class MainLoginActivity extends AppCompatActivity {
         return dialog;
 
     }
-
     private void toHome() {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
