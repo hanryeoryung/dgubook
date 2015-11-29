@@ -1,0 +1,168 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:theme="@android:style/Theme.Light.NoTitleBar">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:background="@color/main_color">
+        <Space
+            android:layout_width="135dp"
+            android:layout_height="70dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text=" DGUBOOK"
+            android:id="@+id/textView"
+            android:layout_gravity="center"
+            android:textStyle="bold" />
+        <Space
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:background="@drawable/home_btn"
+            android:id="@+id/information_home_btn"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="470dp"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#ffffff">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="35dp">
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/setting_user_id"
+            android:text="사용자 ID"
+            android:textColor="@color/main_color"/>
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:text="사용자 이름"
+                android:id="@+id/setting_user_name"
+                android:textColor="@color/main_color"/>
+        </LinearLayout>
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="30dp">
+        </Space>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:id="@+id/setting_change_pw"
+            android:text="비밀번호 변경"
+            android:textColor="#ffffff"
+            android:background="@color/main_color"
+            android:layout_gravity="center_horizontal" />
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="30dp">
+        </Space>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:id="@+id/setting_log_out"
+            android:text="로그아웃"
+            android:textColor="#ffffff"
+            android:background="@color/main_color"
+            android:layout_gravity="center_horizontal" />
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="30dp">
+        </Space>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:id="@+id/setting_good_bye"
+            android:text="회원탈퇴"
+            android:textColor="#ffffff"
+            android:background="@color/main_color"
+            android:layout_gravity="center_horizontal" />
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="30dp">
+        </Space>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:id="@+id/setting_purchase"
+            android:text="업로드 한 책"
+            android:textColor="#ffffff"
+            android:background="@color/main_color"
+            android:layout_gravity="center_horizontal" />
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="30dp">
+        </Space>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:id="@+id/setting_buy"
+            android:text="구매한 책"
+            android:textColor="#ffffff"
+            android:background="@color/main_color"
+            android:layout_gravity="center_horizontal" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/main_color">
+
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="상세검색"
+            android:id="@+id/information_button1" />
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="교재등록"
+            android:id="@+id/information_button2" />
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="교재예약"
+            android:id="@+id/information_button3" />
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="메세지"
+            android:id="@+id/information_button4" />
+        <Button
+            android:layout_width="74dp"
+            android:layout_height="fill_parent"
+            android:textColor="@color/main_color"
+            android:background="#ffffff"
+            android:text="나의정보"
+            android:id="@+id/information_button5" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,119 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:paddingBottom="5dp"
+    android:paddingTop="10dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:layout_height="100dip" >
+    <LinearLayout
+        android:id="@+id/message_bg"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/s_msg_bg"
+        android:layout_alignParentStart="true"
+        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_weight="30"
+            android:layout_alignParentStart="true">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="5"
+                android:layout_alignParentStart="true">
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="100"
+                android:layout_alignParentStart="true">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="3"
+                    android:layout_alignParentStart="true"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="20"
+                    android:layout_alignParentStart="true">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center_vertical"
+                        android:text="000"
+                        android:id="@+id/message_user_name" />
+                    </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="60"
+                    android:layout_alignParentStart="true">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="#000"
+                        android:text="대화중"
+                        android:id="@+id/message_text" />
+                    </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="30"
+                    android:layout_alignParentStart="true">
+                    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/ColorPrimaryDark"
+                    android:textSize="12dp"
+                    android:text="time: "/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/ColorPrimaryDark"
+                        android:textSize="12dp"
+                        android:text="yyyy-mm-dd hh:mm:ss"
+                        android:id="@+id/messege_time" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="3"
+                    android:layout_alignParentStart="true"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="5"
+                android:layout_alignParentStart="true">
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_weight="3"
+            android:layout_alignParentStart="true">
+        </LinearLayout>
+        </LinearLayout>
+
+</LinearLayout>

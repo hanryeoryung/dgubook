@@ -1,0 +1,241 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:andorid="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:theme="@android:style/Theme.Light.NoTitleBar"
+    android:background="#ffffff">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:background="@color/main_color">
+        <Space
+            android:layout_width="135dp"
+            android:layout_height="70dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text=" DGUBOOK"
+            android:id="@+id/textView"
+            android:layout_gravity="center"
+            android:textStyle="bold" />
+        <Space
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:background="@drawable/home_btn"
+            android:id="@+id/upload_home_btn"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="470dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="30dp"
+            android:paddingTop="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="***  검색을 통해 손쉽게 책의 모든 정보를                                                  가져올 수 있습니다***"
+                android:textSize="15dp"
+                android:textColor="@color/main_color"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="3dp" />
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="8dp">
+            </Space>
+            <Button
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:text="검색하여 책 정보 가져오기"
+                android:textColor="#ffffff"
+                android:background="@color/main_color"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/search_book_info"/>
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="15dp">
+            </Space>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/underbar"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="책 제목"
+                android:id="@+id/book_title"
+                android:textSize="30px" />
+
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="3dp">
+        </Space>
+        <EditText
+            android:id="@+id/book_author"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:background="@drawable/underbar"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="저자"
+           android:paddingBottom="5dp"
+            android:textSize="30px" />
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="3dp">
+        </Space>
+        <EditText
+            android:id="@+id/book_publisher"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:background="@drawable/underbar"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="출판사"
+            android:paddingBottom="5dp"
+            android:textSize="30px" />
+                <Space
+                    android:layout_width="fill_parent"
+                    android:layout_height="3dp">
+                </Space>
+                <EditText
+                    android:id="@+id/public_price"
+                    android:layout_width="200dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/underbar"
+                    android:ems="10"
+                    android:singleLine="true"
+                    android:hint="정가"
+                    android:inputType="number"
+                    android:textSize="30px" />
+            </LinearLayout>
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="fill_parent" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal">
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="140dp"
+                    android:background="@drawable/no_image"
+                    android:id="@+id/book_image" />
+                    <Button
+                        android:id="@+id/get_picture"
+                        android:layout_width="95dp"
+                        android:layout_height="30dp"
+                        android:text="사진가져오기"
+                        android:textColor="#ffffff"
+                        android:background="@color/main_color"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="3dp">
+        </Space>
+        <EditText
+            android:id="@+id/personal_price"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:background="@drawable/underbar"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="원하는 거래 가격"
+            android:inputType="number"
+            android:textSize="30px" />
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="3dp">
+            </Space>
+            <EditText
+                android:id="@+id/sale_or_lend"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:background="@drawable/underbar"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="판매용 or 대여용?"
+                android:textSize="30px" />
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="10dp">
+            </Space>
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:id="@+id/book_upload"
+                android:text="등록하기"
+                android:textColor="#ffffff"
+                android:background="@color/main_color"
+                android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/main_color">
+
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="상세검색"
+            android:id="@+id/upload_button1" />
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:textColor="@color/main_color"
+            android:background="#ffffff"
+            android:text="교재등록"
+            android:id="@+id/upload_button2" />
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="교재예약"
+            android:id="@+id/upload_button3" />
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="메세지"
+            android:id="@+id/upload_button4" />
+        <Button
+            android:layout_width="74dp"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:text="나의정보"
+            android:id="@+id/upload_button5" />
+    </LinearLayout>
+
+
+</LinearLayout>
